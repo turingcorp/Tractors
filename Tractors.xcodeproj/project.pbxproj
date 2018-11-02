@@ -10,10 +10,11 @@
 		DA38AC0F218C5EEF0044B779 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA38AC0C218C5EEF0044B779 /* Localizable.strings */; };
 		DA38AC10218C5EEF0044B779 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA38AC0E218C5EEF0044B779 /* LaunchScreen.storyboard */; };
 		DA38AC13218C5EF90044B779 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA38AC12218C5EF90044B779 /* Application.swift */; };
-		DA38AC16218C5F030044B779 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA38AC15218C5F030044B779 /* Tests.swift */; };
+		DA38AC16218C5F030044B779 /* TestParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA38AC15218C5F030044B779 /* TestParsing.swift */; };
 		DA38AC19218C5F0C0044B779 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA38AC18218C5F0B0044B779 /* Catalog.swift */; };
 		DA38AC1B218C60740044B779 /* libTractors.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA38AC08218C5E7C0044B779 /* libTractors.a */; };
 		DA38AC1C218C609B0044B779 /* libTractors.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA38AC08218C5E7C0044B779 /* libTractors.a */; };
+		DAEC1D12218C66B70009E5FB /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1D11218C66B70009E5FB /* Driver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +45,10 @@
 		DA38AC0D218C5EEF0044B779 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA38AC0E218C5EEF0044B779 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA38AC12218C5EF90044B779 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		DA38AC15218C5F030044B779 /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		DA38AC15218C5F030044B779 /* TestParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestParsing.swift; sourceTree = "<group>"; };
 		DA38AC18218C5F0B0044B779 /* Catalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		DADD2F1D218C5D8400D632A1 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAEC1D11218C66B70009E5FB /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +98,7 @@
 		DA38AC14218C5F030044B779 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				DA38AC15218C5F030044B779 /* Tests.swift */,
+				DA38AC15218C5F030044B779 /* TestParsing.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				DA38AC18218C5F0B0044B779 /* Catalog.swift */,
+				DAEC1D11218C66B70009E5FB /* Driver.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA38AC19218C5F0C0044B779 /* Catalog.swift in Sources */,
+				DAEC1D12218C66B70009E5FB /* Driver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA38AC16218C5F030044B779 /* Tests.swift in Sources */,
+				DA38AC16218C5F030044B779 /* TestParsing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

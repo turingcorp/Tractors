@@ -16,6 +16,8 @@
 		DA38AC1C218C609B0044B779 /* libTractors.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA38AC08218C5E7C0044B779 /* libTractors.a */; };
 		DAEC1D12218C66B70009E5FB /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1D11218C66B70009E5FB /* Driver.swift */; };
 		DAEC1D14218C72260009E5FB /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1D13218C72260009E5FB /* Position.swift */; };
+		DAEC1D16218C736C0009E5FB /* TestMerging.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1D15218C736C0009E5FB /* TestMerging.swift */; };
+		DAEC1D18218C75790009E5FB /* Tractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1D17218C75790009E5FB /* Tractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		DADD2F1D218C5D8400D632A1 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAEC1D11218C66B70009E5FB /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		DAEC1D13218C72260009E5FB /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		DAEC1D15218C736C0009E5FB /* TestMerging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMerging.swift; sourceTree = "<group>"; };
+		DAEC1D17218C75790009E5FB /* Tractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				DA38AC15218C5F030044B779 /* TestParsing.swift */,
+				DAEC1D15218C736C0009E5FB /* TestMerging.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 				DA38AC18218C5F0B0044B779 /* Catalog.swift */,
 				DAEC1D11218C66B70009E5FB /* Driver.swift */,
 				DAEC1D13218C72260009E5FB /* Position.swift */,
+				DAEC1D17218C75790009E5FB /* Tractor.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 				DA38AC19218C5F0C0044B779 /* Catalog.swift in Sources */,
 				DAEC1D12218C66B70009E5FB /* Driver.swift in Sources */,
 				DAEC1D14218C72260009E5FB /* Position.swift in Sources */,
+				DAEC1D18218C75790009E5FB /* Tractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA38AC16218C5F030044B779 /* TestParsing.swift in Sources */,
+				DAEC1D16218C736C0009E5FB /* TestMerging.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

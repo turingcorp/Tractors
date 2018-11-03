@@ -7,7 +7,7 @@ class Requester:RequesterProtocol {
     private let drivers:URLRequest
     private let positions:URLRequest
     private static let timeout = 9.0
-    private static let drivers = "https://coding-challenge-assets.s3.eu-central-1.amazonaws.com/positions.json"
+    private static let drivers = "https://coding-challenge-assets.s3.eu-central-1.amazonaws.com/drivers.json"
     private static let positions = "https://coding-challenge-assets.s3.eu-central-1.amazonaws.com/positions.json"
     
     init() {

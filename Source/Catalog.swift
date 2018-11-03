@@ -3,7 +3,7 @@ import Foundation
 public class Catalog {
     public weak var delegate:Delegate?
     public var interval = 30.0
-    public private(set) var tractors = [Tractor]() { didSet { delegate?.tractorsUpdated() } }
+    public private(set) var tractors = [Tractor]() { didSet { tractorsUpdated() } }
     var requester:RequesterProtocol = Requester()
     private var driversMap = [String:Driver]() { didSet { updateTractors() } }
     private var positionsMap = [String:Position]() { didSet { updateTractors() } }
@@ -76,5 +76,11 @@ public class Catalog {
             dateA > dateB
         else { return positionB }
         return positionA
+    }
+    
+    private func tractorsUpdated() {
+        DispatchQueue.main.async { [weak self] in
+            self?.delegate?.tractorsUpdated()
+        }
     }
 }

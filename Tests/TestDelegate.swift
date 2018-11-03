@@ -13,8 +13,11 @@ class TestDelegate:XCTestCase {
     
     func testNotifyOnTractorsUpdated() {
         let expect = expectation(description:String())
-        delegate.onTractorsUpdated = { expect.fulfill() }
-        catalog.update(drivers:[])
+        delegate.onTractorsUpdated = {
+            XCTAssertEqual(Thread.main, Thread.current)
+            expect.fulfill()
+        }
+        DispatchQueue.global(qos:.background).async { self.catalog.update(drivers:[])  }
         waitForExpectations(timeout:1)
     }
 }

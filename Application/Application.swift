@@ -7,12 +7,14 @@ import UIKit
         window = UIWindow(frame:UIScreen.main.bounds)
         window!.backgroundColor = .white
         window!.makeKeyAndVisible()
-        let navigation = UINavigationController(rootViewController:UIViewController())
+        
+        let navigation = UINavigationController(rootViewController:View())
         navigation.navigationBar.isTranslucent = false
         if #available(iOS 11.0, *) {
             navigation.navigationBar.prefersLargeTitles = true
             navigation.navigationItem.largeTitleDisplayMode = .always
         }
+        
         window!.rootViewController = navigation
         return true
     }

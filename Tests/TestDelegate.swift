@@ -14,6 +14,7 @@ class TestDelegate:XCTestCase {
     func testNotifyOnTractorsUpdated() {
         let expect = expectation(description:String())
         delegate.onTractorsUpdated = {
+            self.delegate.onTractorsUpdated = nil
             XCTAssertEqual(Thread.main, Thread.current)
             expect.fulfill()
         }

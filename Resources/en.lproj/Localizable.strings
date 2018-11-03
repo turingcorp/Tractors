@@ -1,2 +1,3 @@
-
-
+View.title="Tractors";
+View.centre="My location";
+Presenter.marker="Tractor";

@@ -21,6 +21,9 @@
 		DA789FCA218DCBB60022E267 /* TestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA789FC9218DCBB60022E267 /* TestDelegate.swift */; };
 		DA789FCC218DCC8D0022E267 /* MockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA789FCB218DCC8D0022E267 /* MockDelegate.swift */; };
 		DA789FCE218DCCBD0022E267 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA789FCD218DCCBD0022E267 /* Delegate.swift */; };
+		DA789FD0218DCF2D0022E267 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA789FCF218DCF2D0022E267 /* View.swift */; };
+		DA789FD2218DCF3D0022E267 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA789FD1218DCF3D0022E267 /* Presenter.swift */; };
+		DA789FD5218DD4040022E267 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA789FD3218DD4040022E267 /* InfoPlist.strings */; };
 		DAEC1D12218C66B70009E5FB /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1D11218C66B70009E5FB /* Driver.swift */; };
 		DAEC1D14218C72260009E5FB /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1D13218C72260009E5FB /* Position.swift */; };
 		DAEC1D16218C736C0009E5FB /* TestMerging.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1D15218C736C0009E5FB /* TestMerging.swift */; };
@@ -64,6 +67,9 @@
 		DA789FC9218DCBB60022E267 /* TestDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDelegate.swift; sourceTree = "<group>"; };
 		DA789FCB218DCC8D0022E267 /* MockDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDelegate.swift; sourceTree = "<group>"; };
 		DA789FCD218DCCBD0022E267 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
+		DA789FCF218DCF2D0022E267 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		DA789FD1218DCF3D0022E267 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		DA789FD4218DD4040022E267 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DADD2F1D218C5D8400D632A1 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAEC1D11218C66B70009E5FB /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		DAEC1D13218C72260009E5FB /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				DA38AC0C218C5EEF0044B779 /* Localizable.strings */,
+				DA789FD3218DD4040022E267 /* InfoPlist.strings */,
 				DA38AC0E218C5EEF0044B779 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -111,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				DA38AC12218C5EF90044B779 /* Application.swift */,
+				DA789FCF218DCF2D0022E267 /* View.swift */,
+				DA789FD1218DCF3D0022E267 /* Presenter.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -271,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA38AC0F218C5EEF0044B779 /* Localizable.strings in Resources */,
+				DA789FD5218DD4040022E267 /* InfoPlist.strings in Resources */,
 				DA38AC10218C5EEF0044B779 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +319,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA789FD2218DCF3D0022E267 /* Presenter.swift in Sources */,
+				DA789FD0218DCF2D0022E267 /* View.swift in Sources */,
 				DA38AC13218C5EF90044B779 /* Application.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +342,14 @@
 				DA38AC0D218C5EEF0044B779 /* en */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		DA789FD3218DD4040022E267 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA789FD4218DD4040022E267 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

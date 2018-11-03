@@ -2,13 +2,20 @@ import Foundation
 
 public class Catalog {
     public var tractors = [Tractor]()
+    public var interval = 30.0
+    var requester:RequesterProtocol = Requester()
     private var driversMap = [String:Driver]() { didSet { updateTractors() } }
     private var positionsMap = [String:Position]() { didSet { updateTractors() } }
     private let formatter = DateFormatter()
+    private let queue = DispatchQueue(label:String(), qos:.background, target:.global(qos:.background))
     
     public init() {
         formatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSS'Z'"
         formatter.timeZone = TimeZone(identifier:"UTC")
+    }
+    
+    public func startRequests() {
+        queue.async { [weak self] in self?.performRequest() }
     }
     
     func update(drivers:[Driver]) {
@@ -27,6 +34,24 @@ public class Catalog {
             }
         }
         self.positionsMap = positionsMap
+    }
+    
+    private func scheduleRequests() {
+        queue.asyncAfter(deadline:.now() + interval) { [weak self] in self?.performRequest() }
+    }
+    
+    private func performRequest() {
+        requester.drivers { [weak self] drivers in
+            self?.queue.async { [weak self] in
+                self?.update(drivers:drivers)
+            }
+        }
+        requester.positions { [weak self] positions in
+            self?.queue.async { [weak self] in
+                self?.update(positions:positions)
+            }
+        }
+        scheduleRequests()
     }
     
     private func updateTractors() {

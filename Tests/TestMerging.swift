@@ -11,6 +11,7 @@ class TestMerging:XCTestCase {
     func testGetTractorInfo() {
         catalog.update(drivers:[Driver(id:"a", name:"John", active:true)])
         catalog.update(positions:[Position(driver_id:"a", latitude:1, longitude:2, timestamp:String())])
+        XCTAssertEqual("a", catalog.tractors.first!.id)
         XCTAssertEqual("John", catalog.tractors.first!.driver)
         XCTAssertEqual(1, catalog.tractors.first!.latitude)
         XCTAssertEqual(2, catalog.tractors.first!.longitude)
@@ -22,6 +23,7 @@ class TestMerging:XCTestCase {
                                   Position(driver_id:"a", latitude:1, longitude:2, timestamp:String()),
                                   Position(driver_id:"c", latitude:3, longitude:6, timestamp:String())])
         XCTAssertEqual(1, catalog.tractors.count)
+        XCTAssertEqual("a", catalog.tractors.first!.id)
         XCTAssertEqual("John", catalog.tractors.first!.driver)
         XCTAssertEqual(1, catalog.tractors.first!.latitude)
         XCTAssertEqual(2, catalog.tractors.first!.longitude)
@@ -33,7 +35,7 @@ class TestMerging:XCTestCase {
                                 Driver(id:"c", name:"Anne", active:true)])
         catalog.update(positions:[Position(driver_id:"a", latitude:1, longitude:2, timestamp:String())])
         XCTAssertEqual(1, catalog.tractors.count)
-        XCTAssertEqual("John", catalog.tractors.first!.driver)
+        XCTAssertEqual("a", catalog.tractors.first!.id)
     }
     
     func testOnlyActiveDrivers() {
@@ -42,7 +44,7 @@ class TestMerging:XCTestCase {
         catalog.update(positions:[Position(driver_id:"a", latitude:0, longitude:0, timestamp:String()),
                                   Position(driver_id:"b", latitude:0, longitude:0, timestamp:String())])
         XCTAssertEqual(1, catalog.tractors.count)
-        XCTAssertEqual("Anne", catalog.tractors.first!.driver)
+        XCTAssertEqual("a", catalog.tractors.first!.id)
     }
     
     func testOnlyLastPosition() {

@@ -17,7 +17,7 @@ class TestDelegate:XCTestCase {
             XCTAssertEqual(Thread.main, Thread.current)
             expect.fulfill()
         }
-        DispatchQueue.global(qos:.background).async { self.catalog.update(drivers:[])  }
+        DispatchQueue.global(qos:.background).async { self.catalog.startRequests()  }
         waitForExpectations(timeout:1)
     }
 }

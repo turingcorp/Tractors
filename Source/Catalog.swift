@@ -62,6 +62,7 @@ public class Catalog {
                 let position = positionsMap[id]
             else { return nil }
             var tractor = Tractor()
+            tractor.id = id
             tractor.driver = driver.name
             tractor.latitude = position.latitude
             tractor.longitude = position.longitude

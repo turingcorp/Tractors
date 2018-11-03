@@ -57,7 +57,7 @@ class TestRequests:XCTestCase {
                 firstTime = false
             } else {
                 self.requester.onRequestDrivers = nil
-                XCTAssertEqual("Anna", self.catalog.tractors.first!.driver)
+                XCTAssertEqual("a", self.catalog.tractors.first!.id)
                 expect.fulfill()
             }
         }

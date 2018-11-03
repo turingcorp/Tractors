@@ -1,7 +1,8 @@
 import Foundation
 
 public struct Tractor {
-    var driver = String()
-    var latitude = 0.0
-    var longitude = 0.0
+    public var id = String()
+    public var driver = String()
+    public var latitude = 0.0
+    public var longitude = 0.0
 }

@@ -1,8 +1,9 @@
 import Foundation
 
 public class Catalog {
-    public var tractors = [Tractor]()
+    public weak var delegate:Delegate?
     public var interval = 30.0
+    public private(set) var tractors = [Tractor]() { didSet { delegate?.tractorsUpdated() } }
     var requester:RequesterProtocol = Requester()
     private var driversMap = [String:Driver]() { didSet { updateTractors() } }
     private var positionsMap = [String:Position]() { didSet { updateTractors() } }

@@ -20,16 +20,20 @@ class Presenter:Delegate {
             if let marker = toRemove.removeValue(forKey:tractor.id) {
                 marker.coordinate = CLLocationCoordinate2D(latitude:tractor.latitude, longitude:tractor.longitude)
             } else {
-                let marker = MKPointAnnotation()
-                marker.title = NSLocalizedString("Presenter.marker", comment:String())
-                marker.subtitle = tractor.driver
-                marker.coordinate = CLLocationCoordinate2D(latitude:tractor.latitude, longitude:tractor.longitude)
-                markers[tractor.id] = marker
-                toAdd.append(marker)
+                toAdd.append(newMarkerFor(tractor:tractor))
             }
         }
         add(markers:toAdd)
-        remove(markers:Array(toRemove.values))
+        remove(markers:toRemove)
+    }
+    
+    private func newMarkerFor(tractor:Tractor) -> MKPointAnnotation {
+        let marker = MKPointAnnotation()
+        marker.title = NSLocalizedString("Presenter.marker", comment:String())
+        marker.subtitle = tractor.driver
+        marker.coordinate = CLLocationCoordinate2D(latitude:tractor.latitude, longitude:tractor.longitude)
+        markers[tractor.id] = marker
+        return marker
     }
     
     private func add(markers:[MKPointAnnotation]) {
@@ -38,9 +42,10 @@ class Presenter:Delegate {
         }
     }
     
-    private func remove(markers:[MKPointAnnotation]) {
-        if !markers.isEmpty {
-            removeMarkers?(markers)
+    private func remove(markers:[String:MKPointAnnotation]) {
+        Array(markers.keys).forEach { key in
+            self.markers.removeValue(forKey:key)
         }
+        removeMarkers?(Array(markers.values))
     }
 }

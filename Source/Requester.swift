@@ -25,7 +25,7 @@ class Requester:RequesterProtocol {
     
     func drivers(completion:@escaping(([Driver]) -> Void)) {
         taskDrivers?.cancel()
-        taskDrivers = session.dataTask(with:drivers) { [weak self] (data, response, error) in
+        taskDrivers = session.dataTask(with:drivers) { [weak self] data, response, error in
             guard
                 let data = self?.validate(data:data, response:response, error:error),
                 let drivers = try? JSONDecoder().decode([Driver].self, from:data)
@@ -37,7 +37,7 @@ class Requester:RequesterProtocol {
     
     func positions(completion:@escaping(([Position]) -> Void)) {
         taskPositions?.cancel()
-        taskPositions = session.dataTask(with:positions) { [weak self] (data, response, error) in
+        taskPositions = session.dataTask(with:positions) { [weak self] data, response, error in
             guard
                 let data = self?.validate(data:data, response:response, error:error),
                 let positions = try? JSONDecoder().decode([Position].self, from:data)
